@@ -9,6 +9,7 @@
    - [Connections](#connections)
    - [Organoid](#organoid)
    - [Visualization](#visualization)
+   - [Results Management](#results-management)
    - [AI Integration](#ai-integration)
 5. [Neural Dynamics](#neural-dynamics)
 6. [How to Use](#how-to-use)
@@ -49,7 +50,10 @@ ViktorBrain follows a modular architecture with these key components:
 4. **Visualization Module** (`visualization.py`): Provides visualization tools for analyzing the organoid's state.
 5. **Integration Module** (`integration.py`): Connects the organoid to AI systems, translating neural states into generation parameters.
 
-The project also includes demonstration scripts:
+The project also includes utility scripts:
+- `run_simulation.py`: Manages simulation execution with parameter configuration.
+- `view_results.py`: Provides browser-based visualization and analysis of results.
+- `clean_results.py`: Helps with disk space management and optimization.
 - `demo.py`: Demonstrates standalone organoid functionality.
 - `integration_demo.py`: Shows how the organoid integrates with language models.
 
@@ -169,6 +173,73 @@ The visualization module provides multiple ways to understand the organoid's sta
 
 These visualizations help understand emergent behaviors and cluster formation.
 
+### Results Management
+
+The results management system provides a comprehensive framework for organizing, analyzing, and managing simulation outputs:
+
+1. **Hierarchical Organization**: 
+   - Results are stored in a structured directory system
+   - Each simulation has a unique ID and timestamp
+   - Configuration, visualizations, and states are separated logically
+
+2. **Browser-Based Visualization**:
+   - Interactive dashboard for viewing simulation results
+   - Comparative analysis across multiple simulations
+   - Summary reports and metrics visualization
+   - One-click access to all generated visualizations
+
+3. **Persistent Neural Organoid States**:
+   - Complete organoid states are saved as JSON
+   - States can be loaded for continued experimentation
+   - Provides "brain data" for integration with AI systems
+   - Enables tracking of neural evolution over time
+
+4. **Resource Management**:
+   - Tools for cleaning up old simulation results
+   - Options to preserve specific data while removing others
+   - Disk usage statistics and optimization recommendations
+   - Balances data preservation with storage constraints
+
+The system is implemented through three main components:
+
+- **run_simulation.py**: Manages the simulation process with command-line parameters
+- **view_results.py**: Provides visualization and analysis capabilities
+- **clean_results.py**: Handles disk space management and optimization
+
+Example of simulation execution:
+```python
+def run_simulation(args):
+    # Create output directories
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    temp_dir = f"temp_results_{timestamp}"
+    os.makedirs(temp_dir, exist_ok=True)
+    
+    # Initialize organoid with specified parameters
+    organoid = Organoid(
+        num_neurons=args.neurons,
+        connection_density=args.connection_density,
+        spontaneous_activity=args.spontaneous_activity,
+        seed=args.seed
+    )
+    
+    # Run simulation
+    for step in range(args.steps):
+        organoid.simulate(1)
+        
+        # Periodically report progress
+        if step % 10 == 0:
+            clusters = organoid.get_clusters()
+            print(f"Step {step}/{args.steps}: Found {len(clusters)} clusters")
+    
+    # Save final state
+    if not args.no_state:
+        with open(f"{temp_dir}/final_state.json", "w") as f:
+            json.dump(organoid.to_json(), f)
+    
+    # Save configuration and results
+    save_results(organoid, args, timestamp, temp_dir)
+```
+
 ### AI Integration
 
 The integration module connects the organoid to language models, with these key functions:
@@ -230,23 +301,37 @@ Through Hebbian plasticity, the network gradually adapts to input patterns, stre
 
 ## How to Use
 
-ViktorBrain can be used in two primary modes:
+ViktorBrain can be used in several modes:
 
-### 1. Standalone Mode
-This runs the organoid simulation without AI integration:
+### 1. Standard Simulation Mode
+Run a simulation with specified parameters and save the results:
 
 ```bash
-python demo.py --neurons 500 --steps 1000 --save-dir ./demo_results
+python run_simulation.py --neurons 1000 --steps 100 --name "my_simulation"
 ```
 
-### 2. Integration Mode
-This connects the organoid with language model APIs:
+### 2. Results Analysis Mode
+View and analyze simulation results:
+
+```bash
+python view_results.py --list
+python view_results.py --id <simulation_id>
+python view_results.py --summary
+```
+
+### 3. Integration Mode
+Connect the organoid with language model APIs:
 
 ```bash
 python integration_demo.py --neurons 300 --initial-steps 100 --interactive
 ```
 
-The integration demo supports both interactive conversations and scripted simulations.
+### 4. Maintenance Mode
+Manage disk space and optimize storage:
+
+```bash
+python clean_results.py --older-than 7 --keep-json
+```
 
 ## Technical Implementation Details
 
