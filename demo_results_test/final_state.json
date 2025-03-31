@@ -1,0 +1,1227 @@
+{
+  "time_step": 50,
+  "parameters": {
+    "num_neurons": 100,
+    "connection_density": 0.1,
+    "spontaneous_activity": 0.02,
+    "distance_sensitivity": 0.5
+  },
+  "neurons": {
+    "0": {
+      "position": [
+        0.7223845972740861,
+        0.7903383721688791,
+        0.2588640805458663
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3734890781903137,
+      "activation": 0.0,
+      "refractory_period": 5
+    },
+    "1": {
+      "position": [
+        0.6136530229090155,
+        0.3723035203184537,
+        0.5204193763435195
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3318709286932866,
+      "activation": 0.0,
+      "refractory_period": 5
+    },
+    "2": {
+      "position": [
+        0.5153623617170924,
+        0.9288541141661614,
+        0.6453540927798659
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.39129704694776074,
+      "activation": 0.0024427533403999896,
+      "refractory_period": 5
+    },
+    "3": {
+      "position": [
+        0.9644871204621155,
+        0.3137708471835907,
+        0.7779297417744601
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.3759412747141009,
+      "activation": 8.84478523812888e-07,
+      "refractory_period": 4
+    },
+    "4": {
+      "position": [
+        0.11002364222066574,
+        0.09230169878473415,
+        0.5930345910746468
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6738574093669741,
+      "activation": 0.001203990410175715,
+      "refractory_period": 5
+    },
+    "5": {
+      "position": [
+        0.9237967714916323,
+        0.8249573597759184,
+        0.9984195880547609
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5810632900744076,
+      "activation": 0.0,
+      "refractory_period": 2
+    },
+    "6": {
+      "position": [
+        0.5695363274249434,
+        0.40028625789917616,
+        0.2520526004674034
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.3342281951756374,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "7": {
+      "position": [
+        0.5792259202101291,
+        0.8429167548630518,
+        0.48273379486569135
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.4825262101724333,
+      "activation": 2.0525724844074578e-05,
+      "refractory_period": 2
+    },
+    "8": {
+      "position": [
+        0.331750363673076,
+        0.20966702176900998,
+        0.7991425084141985
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.672080962333467,
+      "activation": 0.0,
+      "refractory_period": 4
+    },
+    "9": {
+      "position": [
+        0.014068450799472831,
+        0.19310446821208072,
+        0.11740512721954965
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.692305557258103,
+      "activation": 1.0966488803087057e-08,
+      "refractory_period": 3
+    },
+    "10": {
+      "position": [
+        0.40101146904475693,
+        0.5275168950524836,
+        0.5321588013003619
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.6937815142057172,
+      "activation": 0.0013579929508798977,
+      "refractory_period": 2
+    },
+    "11": {
+      "position": [
+        0.2266807860088006,
+        0.1574947658925162,
+        0.6132498847613641
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5801829274194219,
+      "activation": 2.7443846715569303e-05,
+      "refractory_period": 5
+    },
+    "12": {
+      "position": [
+        0.7920128671330935,
+        0.0165214177347206,
+        0.5682400150091658
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.31255428797787455,
+      "activation": 9.141696462549514e-08,
+      "refractory_period": 4
+    },
+    "13": {
+      "position": [
+        0.9524240567806306,
+        0.19500054649762444,
+        0.5966943984083664
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.43042667892060393,
+      "activation": 3.1106213984956666e-06,
+      "refractory_period": 2
+    },
+    "14": {
+      "position": [
+        0.547932764002399,
+        0.5963597677550736,
+        0.8572474338678694
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6653914829077687,
+      "activation": 0.0008071947846594856,
+      "refractory_period": 5
+    },
+    "15": {
+      "position": [
+        0.34127303391829844,
+        0.7955055452351155,
+        0.6159676177033493
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.34970252545417124,
+      "activation": 0.00044623255961026125,
+      "refractory_period": 4
+    },
+    "16": {
+      "position": [
+        0.7761048597424938,
+        0.4846550082200993,
+        0.09747641135297458
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6727767399364936,
+      "activation": 0.042674149514005846,
+      "refractory_period": 5
+    },
+    "17": {
+      "position": [
+        0.6485228597163658,
+        0.9651362432247285,
+        0.6829859571083314
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6048183581604514,
+      "activation": 0.0,
+      "refractory_period": 4
+    },
+    "18": {
+      "position": [
+        0.8423652737466958,
+        0.04997307665718542,
+        0.31053467379690336
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3424954320968027,
+      "activation": 3.225342724753431e-05,
+      "refractory_period": 3
+    },
+    "19": {
+      "position": [
+        0.6541429141725316,
+        0.5090306488658548,
+        0.5034928802490041
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.4578340967715224,
+      "activation": 0.0,
+      "refractory_period": 5
+    },
+    "20": {
+      "position": [
+        0.7449385547706017,
+        0.06445257559825934,
+        0.26123211859239637
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5760530574874403,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "21": {
+      "position": [
+        0.3645768941207572,
+        0.15113109005225422,
+        0.6905027020812688
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.5041786534867125,
+      "activation": 0.0012070687809634612,
+      "refractory_period": 5
+    },
+    "22": {
+      "position": [
+        0.34841044376137464,
+        0.9711665954116308,
+        0.788087397965423
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6866573557509913,
+      "activation": 0.0032352325836859223,
+      "refractory_period": 2
+    },
+    "23": {
+      "position": [
+        0.17528684062799382,
+        0.14141835768443,
+        0.13611510964344842
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.36784465755287193,
+      "activation": 0.00013591063918031487,
+      "refractory_period": 3
+    },
+    "24": {
+      "position": [
+        0.9293830685926683,
+        0.4937510371712417,
+        0.30923883392448437
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3242728892453624,
+      "activation": 4.132751468508847e-08,
+      "refractory_period": 2
+    },
+    "25": {
+      "position": [
+        0.24957471158557454,
+        0.5581300587668372,
+        0.5698017687647943
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5044530969614597,
+      "activation": 0.0,
+      "refractory_period": 2
+    },
+    "26": {
+      "position": [
+        0.6969450675400148,
+        0.9055736059260725,
+        0.020702610270796562
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6381373978159306,
+      "activation": 0.0,
+      "refractory_period": 4
+    },
+    "27": {
+      "position": [
+        0.026989199069350045,
+        0.606215333803284,
+        0.9944835374710399
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.4112166284493306,
+      "activation": 0.0,
+      "refractory_period": 2
+    },
+    "28": {
+      "position": [
+        0.7003090976836794,
+        0.28378261449374487,
+        0.2909639913578549
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.3497221856972718,
+      "activation": 0.013826318686977212,
+      "refractory_period": 2
+    },
+    "29": {
+      "position": [
+        0.15637321835104,
+        0.8946003551530229,
+        0.6674151090660697
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5568641769399052,
+      "activation": 3.733844550076802e-05,
+      "refractory_period": 5
+    },
+    "30": {
+      "position": [
+        0.2159861194308802,
+        0.48466393009504805,
+        0.05421232434605916
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.5218030091882171,
+      "activation": 5.176980727729929e-06,
+      "refractory_period": 3
+    },
+    "31": {
+      "position": [
+        0.45854641834310583,
+        0.7158755217348762,
+        0.12172400142799844
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6096559139718845,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "32": {
+      "position": [
+        0.3462250276533605,
+        0.8626761311240146,
+        0.6319368630750355
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3134596230985764,
+      "activation": 0.0008548597686834609,
+      "refractory_period": 2
+    },
+    "33": {
+      "position": [
+        0.23916772815086262,
+        0.5247807944625807,
+        0.46526094594434986
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.4272608058678786,
+      "activation": 0.0,
+      "refractory_period": 4
+    },
+    "34": {
+      "position": [
+        0.25737858114358925,
+        0.5291687366970557,
+        0.25601703233122197
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.34567986169119047,
+      "activation": 2.96692418221791e-06,
+      "refractory_period": 3
+    },
+    "35": {
+      "position": [
+        0.08620783394063558,
+        0.8266362425156053,
+        0.4822615118865323
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.524899765803749,
+      "activation": 3.8125591075129027e-06,
+      "refractory_period": 5
+    },
+    "36": {
+      "position": [
+        0.2581711451513745,
+        0.3212968551810301,
+        0.9447502065399258
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5786660255274625,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "37": {
+      "position": [
+        0.6738257496011079,
+        0.6844231831828003,
+        0.7179090119085978
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.5365944361706732,
+      "activation": 0.0004063255340425456,
+      "refractory_period": 3
+    },
+    "38": {
+      "position": [
+        0.7480854980667412,
+        0.51423480168073,
+        0.8183268277624526
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5620377862196215,
+      "activation": 0.0,
+      "refractory_period": 5
+    },
+    "39": {
+      "position": [
+        0.35048120837730046,
+        0.11540173102560525,
+        0.985505062203938
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3809378707862311,
+      "activation": 0.00031207617978859677,
+      "refractory_period": 2
+    },
+    "40": {
+      "position": [
+        0.8945920237182493,
+        0.6631423498515114,
+        0.21792994565204216
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.49833128246062397,
+      "activation": 9.658032657036948e-10,
+      "refractory_period": 5
+    },
+    "41": {
+      "position": [
+        0.8703702750822035,
+        0.5908720463867077,
+        0.5851151269007991
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.4864694939564352,
+      "activation": 0.0,
+      "refractory_period": 5
+    },
+    "42": {
+      "position": [
+        0.9980145051588684,
+        0.8798137507617065,
+        0.035509644563336606
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5126007837669468,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "43": {
+      "position": [
+        0.03743631948010684,
+        0.7656213071804955,
+        0.039678060348640076
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5385396217634513,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "44": {
+      "position": [
+        0.1751645636326662,
+        0.45761643212956016,
+        0.9609252097775727
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5818755363526282,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "45": {
+      "position": [
+        0.4351352519032744,
+        0.8768326225364079,
+        0.8423059010603208
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5486217138122658,
+      "activation": 0.00249346619431067,
+      "refractory_period": 5
+    },
+    "46": {
+      "position": [
+        0.9159521397965442,
+        0.5387845665098009,
+        0.844543116634608
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5991444158127488,
+      "activation": 6.174175693713296e-05,
+      "refractory_period": 4
+    },
+    "47": {
+      "position": [
+        0.8739706630655706,
+        0.26064727141013666,
+        0.06817929936370315
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.44140843154312814,
+      "activation": 0.0,
+      "refractory_period": 2
+    },
+    "48": {
+      "position": [
+        0.7207326486024959,
+        0.46368533920599886,
+        0.5629759186453971
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.32485159858873813,
+      "activation": 0.01614629354138518,
+      "refractory_period": 5
+    },
+    "49": {
+      "position": [
+        0.26124964487998625,
+        0.5645599506235214,
+        0.34380212551144107
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.652642492395272,
+      "activation": 0.0,
+      "refractory_period": 4
+    },
+    "50": {
+      "position": [
+        0.06591186582075936,
+        0.8954701745740528,
+        0.43249601816871774
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6617266045670863,
+      "activation": 0.0,
+      "refractory_period": 4
+    },
+    "51": {
+      "position": [
+        0.22513850777098532,
+        0.20152584195768597,
+        0.9061428509915467
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.4910916875685164,
+      "activation": 0.0,
+      "refractory_period": 2
+    },
+    "52": {
+      "position": [
+        0.08045116324076396,
+        0.3370688489799024,
+        0.13947597876136886
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.41026943294456814,
+      "activation": 1.0,
+      "refractory_period": 4
+    },
+    "53": {
+      "position": [
+        0.1775651745385729,
+        0.21551572253912576,
+        0.7114034540749767
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.39773619998172105,
+      "activation": 0.0,
+      "refractory_period": 5
+    },
+    "54": {
+      "position": [
+        0.9693254737913509,
+        0.1568873258323773,
+        0.9231629931528796
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6380570714065501,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "55": {
+      "position": [
+        0.7491281445003165,
+        0.881362110631843,
+        0.40121613258421807
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.35145976100412607,
+      "activation": 0.022051570048378988,
+      "refractory_period": 3
+    },
+    "56": {
+      "position": [
+        0.12033116002516264,
+        0.354731656803554,
+        0.03742777543179776
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6367037607268677,
+      "activation": 0.014123706408082807,
+      "refractory_period": 2
+    },
+    "57": {
+      "position": [
+        0.19746606391883836,
+        0.24990007853341067,
+        0.9288562989589323
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.525154988257601,
+      "activation": 2.1943460708898816e-05,
+      "refractory_period": 4
+    },
+    "58": {
+      "position": [
+        0.6339589190803421,
+        0.3141248883573444,
+        0.2626945936512627
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.6464262631607618,
+      "activation": 3.7076953977919514e-07,
+      "refractory_period": 5
+    },
+    "59": {
+      "position": [
+        0.04484866686434352,
+        0.7967550478465711,
+        0.7454688362142765
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5374792522010522,
+      "activation": 0.0,
+      "refractory_period": 4
+    },
+    "60": {
+      "position": [
+        0.6243326200046743,
+        0.33802952806380604,
+        0.9330179918206148
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3353300646545927,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "61": {
+      "position": [
+        0.3167582213165939,
+        0.5806520463130733,
+        0.18832601682601235
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.4447461412244258,
+      "activation": 0.0001003737778737438,
+      "refractory_period": 3
+    },
+    "62": {
+      "position": [
+        0.11469055397743455,
+        0.5024306298377533,
+        0.06608205712987458
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5016907797624817,
+      "activation": 0.0,
+      "refractory_period": 4
+    },
+    "63": {
+      "position": [
+        0.5037811742652539,
+        0.8459177605628942,
+        0.6273543055924325
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6498756480594898,
+      "activation": 3.2508487910028495e-05,
+      "refractory_period": 2
+    },
+    "64": {
+      "position": [
+        0.29677915869905447,
+        0.8572162000117299,
+        0.4251775007230002
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5489450200013568,
+      "activation": 0.0,
+      "refractory_period": 2
+    },
+    "65": {
+      "position": [
+        0.5626827669671028,
+        0.3378320198552385,
+        0.004627090381994714
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5593000064021629,
+      "activation": 3.901808636299853e-12,
+      "refractory_period": 3
+    },
+    "66": {
+      "position": [
+        0.6837198121161095,
+        0.30961260146093905,
+        0.17781851961648187
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5658079060050113,
+      "activation": 8.84020833482217e-06,
+      "refractory_period": 4
+    },
+    "67": {
+      "position": [
+        0.7964150657535112,
+        0.7692612477260085,
+        0.30684258808914644
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6344970176867513,
+      "activation": 0.0,
+      "refractory_period": 2
+    },
+    "68": {
+      "position": [
+        0.917568352687393,
+        0.723195788573574,
+        0.026537221456747973
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.584537243358147,
+      "activation": 4.564389314577085e-07,
+      "refractory_period": 4
+    },
+    "69": {
+      "position": [
+        0.048081336531274776,
+        0.39348889871688775,
+        0.9556973391377446
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5301462482878001,
+      "activation": 0.0,
+      "refractory_period": 2
+    },
+    "70": {
+      "position": [
+        0.30955895258304367,
+        0.312310705321482,
+        0.9606325847753274
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3735823422870802,
+      "activation": 2.241130793537912e-05,
+      "refractory_period": 2
+    },
+    "71": {
+      "position": [
+        0.50323604120592,
+        0.5292883933027993,
+        0.030557489730553833
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3271242929782721,
+      "activation": 1.687049711239976e-05,
+      "refractory_period": 3
+    },
+    "72": {
+      "position": [
+        0.4763542369334067,
+        0.7994174398219795,
+        0.08540433565611383
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5957407896389817,
+      "activation": 1.172729770343893e-05,
+      "refractory_period": 2
+    },
+    "73": {
+      "position": [
+        0.35872996365927245,
+        0.03882899547948859,
+        0.6629749810691447
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6502945179183223,
+      "activation": 0.0,
+      "refractory_period": 4
+    },
+    "74": {
+      "position": [
+        0.352799989168872,
+        0.29826127096286936,
+        0.40793312090475
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.38467335365888156,
+      "activation": 0.0021281712134549506,
+      "refractory_period": 5
+    },
+    "75": {
+      "position": [
+        0.6684567591814322,
+        0.20866562829074475,
+        0.30704646140075875
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.584861111804255,
+      "activation": 0.013188278774981351,
+      "refractory_period": 2
+    },
+    "76": {
+      "position": [
+        0.09440848554467163,
+        0.11381619762533379,
+        0.9927891865451562
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.4156870127981789,
+      "activation": 0.0,
+      "refractory_period": 2
+    },
+    "77": {
+      "position": [
+        0.7601859428756018,
+        0.7889666976918865,
+        0.9774413227718757
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.31395983232511787,
+      "activation": 0.0,
+      "refractory_period": 5
+    },
+    "78": {
+      "position": [
+        0.6978675471700705,
+        0.4063348220492914,
+        0.32484636991551685
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.47653252975098304,
+      "activation": 0.0004863878983467346,
+      "refractory_period": 4
+    },
+    "79": {
+      "position": [
+        0.624210994649399,
+        0.08222602467284701,
+        0.13628745166342793
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5620693611041377,
+      "activation": 5.927416496616394e-08,
+      "refractory_period": 4
+    },
+    "80": {
+      "position": [
+        0.7255985076152642,
+        0.42199047477714235,
+        0.7015972348966806
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.45806877650086814,
+      "activation": 4.899378497653723e-07,
+      "refractory_period": 4
+    },
+    "81": {
+      "position": [
+        0.5971879594259544,
+        0.39950907231530375,
+        0.2524714719094133
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5957725005125367,
+      "activation": 0.0,
+      "refractory_period": 5
+    },
+    "82": {
+      "position": [
+        0.3591872468503947,
+        0.2928107242467832,
+        0.6892110432263028
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.33363678461254803,
+      "activation": 0.0003707455105347173,
+      "refractory_period": 2
+    },
+    "83": {
+      "position": [
+        0.37666181924657305,
+        0.1730170264802554,
+        0.3990257007693633
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.3621389668805755,
+      "activation": 1.4980039663377308e-06,
+      "refractory_period": 5
+    },
+    "84": {
+      "position": [
+        0.07985407919584109,
+        0.9713941773368403,
+        0.4603483028736617
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.44955251345086106,
+      "activation": 0.0,
+      "refractory_period": 3
+    },
+    "85": {
+      "position": [
+        0.2901729488196685,
+        0.2926494387791363,
+        0.6666447440498394
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.5561511783981866,
+      "activation": 2.234111516500223e-07,
+      "refractory_period": 3
+    },
+    "86": {
+      "position": [
+        0.5622108151933923,
+        0.35207222542954564,
+        0.035895241050723614
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.3085630470815289,
+      "activation": 0.00014329519077127556,
+      "refractory_period": 5
+    },
+    "87": {
+      "position": [
+        0.09515909646627996,
+        0.2757461382234795,
+        0.7144450099815614
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.39620277716570246,
+      "activation": 1.622900272113985e-05,
+      "refractory_period": 5
+    },
+    "88": {
+      "position": [
+        0.9731841092322159,
+        0.27676727896077946,
+        0.30851380217935387
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.388390177048544,
+      "activation": 1.0727354666646272e-06,
+      "refractory_period": 5
+    },
+    "89": {
+      "position": [
+        0.0024186685160515475,
+        0.5759909136802235,
+        0.23803867269555845
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6851381286126972,
+      "activation": 3.873090829485173e-05,
+      "refractory_period": 5
+    },
+    "90": {
+      "position": [
+        0.29461924031962383,
+        0.5961513546070689,
+        0.4987728143814939
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5563173970504145,
+      "activation": 0.04084946487134955,
+      "refractory_period": 4
+    },
+    "91": {
+      "position": [
+        0.7688934281618341,
+        0.15103612990297677,
+        0.4585087105971466
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5041107697036216,
+      "activation": 0.0,
+      "refractory_period": 5
+    },
+    "92": {
+      "position": [
+        0.9932750540341844,
+        0.2755770074396573,
+        0.3300533921703631
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5764401960491388,
+      "activation": 5.550037705305816e-05,
+      "refractory_period": 2
+    },
+    "93": {
+      "position": [
+        0.5200610996203842,
+        0.0657592686462053,
+        0.5239560119279327
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6313773667088683,
+      "activation": 0.00013848801617232653,
+      "refractory_period": 4
+    },
+    "94": {
+      "position": [
+        0.17647573474146327,
+        0.18565609996606258,
+        0.0689329927769119
+      ],
+      "neuron_type": "INHIBITORY",
+      "threshold": 0.43786800056288344,
+      "activation": 4.6649427965370445e-07,
+      "refractory_period": 2
+    },
+    "95": {
+      "position": [
+        0.5462303966533423,
+        0.13738039769368193,
+        0.778043957315011
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.585567271221948,
+      "activation": 0.0019926067480022366,
+      "refractory_period": 5
+    },
+    "96": {
+      "position": [
+        0.3850276534291116,
+        0.9491518041854768,
+        0.5404759448115544
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6120669938163459,
+      "activation": 0.0001191515880567205,
+      "refractory_period": 2
+    },
+    "97": {
+      "position": [
+        0.23302090430071387,
+        0.5159029354547525,
+        0.9727763363526767
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5792019685195869,
+      "activation": 3.2998292434360793e-07,
+      "refractory_period": 5
+    },
+    "98": {
+      "position": [
+        0.6624399493980638,
+        0.5412989859774039,
+        0.7545471328416092
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.6658459410668398,
+      "activation": 0.00024389788125237899,
+      "refractory_period": 2
+    },
+    "99": {
+      "position": [
+        0.4642643398745542,
+        0.9030271462678838,
+        0.2971836585419375
+      ],
+      "neuron_type": "EXCITATORY",
+      "threshold": 0.5916868969101401,
+      "activation": 0.0004889702266548972,
+      "refractory_period": 3
+    }
+  },
+  "cluster_assignments": {
+    "92": 0,
+    "35": 1,
+    "4": 2,
+    "60": 3,
+    "41": 4,
+    "50": 5,
+    "62": 6,
+    "24": 7,
+    "76": 8,
+    "61": 9,
+    "52": 10,
+    "97": 11,
+    "7": 12,
+    "23": 13,
+    "18": 14,
+    "34": 15,
+    "8": 16,
+    "9": 17,
+    "54": 18,
+    "21": 19,
+    "40": 20,
+    "88": 21,
+    "84": 22,
+    "56": 23,
+    "11": 24,
+    "13": 25,
+    "36": 26,
+    "80": 27,
+    "27": 28,
+    "74": 29,
+    "72": 30,
+    "22": 31,
+    "51": 32,
+    "67": 33,
+    "58": 34,
+    "46": 35,
+    "2": 36,
+    "55": 37,
+    "65": 38,
+    "47": 39,
+    "79": 40,
+    "75": 41,
+    "39": 42,
+    "49": 43,
+    "82": 44,
+    "32": 45,
+    "14": 46,
+    "63": 47,
+    "30": 48,
+    "33": 49,
+    "87": 50,
+    "73": 51,
+    "37": 52,
+    "68": 53,
+    "44": 54,
+    "48": 55,
+    "10": 56,
+    "12": 57,
+    "78": 58,
+    "94": 59,
+    "43": 60,
+    "83": 61,
+    "70": 62,
+    "15": 63,
+    "53": 64,
+    "71": 65,
+    "42": 66,
+    "17": 67,
+    "89": 68,
+    "64": 69,
+    "25": 70,
+    "85": 71,
+    "29": 72,
+    "3": 73,
+    "91": 74,
+    "5": 75,
+    "6": 76,
+    "16": 77,
+    "96": 78,
+    "90": 79,
+    "1": 80,
+    "26": 81,
+    "93": 82,
+    "66": 83,
+    "38": 84,
+    "28": 85,
+    "0": 86,
+    "57": 87,
+    "98": 88,
+    "45": 89,
+    "99": 90,
+    "19": 91,
+    "86": 92,
+    "59": 93,
+    "20": 94,
+    "69": 95,
+    "81": 96,
+    "31": 97,
+    "95": 98,
+    "77": 99
+  },
+  "cluster_types": {},
+  "neural_state": {
+    "emotional_valence": 0.5,
+    "emotional_arousal": 0.5,
+    "memory_activation": 0.5,
+    "attention_focus": 0.5,
+    "technical_interest": 0.5,
+    "philosophical_depth": 0.5,
+    "social_engagement": 0.5
+  },
+  "connection_stats": {
+    "total": 990,
+    "active": 297
+  }
+}

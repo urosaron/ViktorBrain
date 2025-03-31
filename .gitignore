@@ -1,0 +1,52 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environment
+venv/
+ENV/
+.env
+.venv
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Project specific
+demo_results/
+integration_results/
+test_output/
+data/
+*.pt  # PyTorch model files
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Log files
+logs/
+*.log 
+
+#Personal files
+logbook.md
