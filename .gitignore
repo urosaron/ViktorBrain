@@ -35,10 +35,17 @@ ENV/
 
 # Project specific
 demo_results/
+demo_results_test/
 integration_results/
-test_output/
-data/
-*.pt  # PyTorch model files
+temp_results_*/
+results/
+
+# Except keep the directory structure
+!results/.gitkeep
+!results/configurations/.gitkeep
+!results/visualizations/.gitkeep
+!results/states/.gitkeep
+!results/summary/.gitkeep
 
 # Jupyter Notebook
 .ipynb_checkpoints
