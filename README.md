@@ -25,6 +25,9 @@ ViktorBrain/
 │   └── test_organoid.py    # Tests for organoid functionality
 ├── notebooks/              # Jupyter notebooks
 │   └── organoid_exploration.ipynb  # Interactive exploration
+├── run_simulation.py       # Manages simulation execution
+├── view_results.py         # Browser-based visualization tool
+├── clean_results.py        # Disk space management utility
 ├── demo.py                 # Standalone organoid demo
 └── integration_demo.py     # Demo of ViktorAI integration
 ```
@@ -44,6 +47,14 @@ ViktorBrain/
 - Network graph visualization
 - Activity plots and animations
 - Cluster activity tracking
+
+### Results Management
+
+- Organized directory structure for simulation results
+- Browser-based visualization and analysis dashboard
+- Persistent neural organoid states for continued experimentation
+- Summary reports and comparison tools
+- Disk space optimization utilities
 
 ### ViktorAI Integration
 
@@ -76,16 +87,27 @@ ViktorBrain/
    pip install -r requirements.txt
    ```
 
-### Running Demos
+### Running Simulations
 
-To run the standalone organoid demo:
+To run a simulation with specific parameters:
 ```
-python demo.py --neurons 200 --steps 1000 --save-dir ./demo_results
+python run_simulation.py --neurons 1000 --steps 100 --name "my_simulation"
 ```
 
-To run the integration demo:
+To view simulation results:
 ```
-python integration_demo.py --neurons 300 --initial-steps 100 --interactive
+python view_results.py --list
+python view_results.py --id <simulation_id>
+```
+
+To generate a summary of all simulations:
+```
+python view_results.py --summary
+```
+
+To clean up old simulation files:
+```
+python clean_results.py --older-than 7 --keep-json
 ```
 
 ## Usage Examples
