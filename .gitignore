@@ -47,7 +47,10 @@ results/
 !results/states/.gitkeep
 !results/summary/.gitkeep
 
-# Jupyter Notebook
+# Sessions data
+sessions/*/
+
+# Jupyter Notebook (unused but kept for reference)
 .ipynb_checkpoints
 *.ipynb
 
@@ -55,5 +58,9 @@ results/
 logs/
 *.log 
 
-#Personal files
-logbook.mdlogbook.md
+# System control files
+.viktor_processes.json
+
+# Specific files to exclude
+docs/logbook.md
+docs/improvements.md

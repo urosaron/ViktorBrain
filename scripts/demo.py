@@ -3,21 +3,30 @@
 ViktorBrain Demo Script
 
 This script demonstrates the core functionality of the ViktorBrain organoid simulation.
-It creates an organoid, runs simulation steps, and visualizes the results.
+It creates a neural organoid, runs a simulation, and generates visualizations.
 """
 
 import os
-import time
+import sys
 import argparse
+import json
+import time
 import matplotlib.pyplot as plt
-from typing import Dict, List, Tuple, Optional, Any
+import numpy as np
+from datetime import datetime
 
+# Add project root to path to ensure imports work from scripts directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(script_dir, '..'))
+sys.path.insert(0, project_root)
+
+# Now we can import from src
 from src.organoid import Organoid
 from src.visualization import (
-    plot_global_activity, 
-    plot_cluster_activity, 
-    plot_organoid_3d, 
+    plot_global_activity,
     plot_network_graph,
+    plot_organoid_3d,
+    plot_cluster_activity,
     create_dashboard
 )
 

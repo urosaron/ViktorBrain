@@ -9,7 +9,7 @@ seaborn==0.13.1
 networkx>=2.6.3
 
 # Analysis
-pandas==2.1.4
+pandas==2.2.1
 scikit-learn>=1.0.2
 
 # Jupyter notebooks
@@ -28,4 +28,8 @@ requests>=2.27.1
 
 # Additional dependencies
 tqdm>=4.64.0
-jupyterlab>=3.3.0 
+jupyterlab>=3.3.0
+fastapi==0.109.2
+uvicorn==0.27.1
+pydantic==2.6.1
+requests==2.31.0 

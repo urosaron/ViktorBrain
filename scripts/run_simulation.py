@@ -14,6 +14,15 @@ import argparse
 import time
 import datetime
 from pathlib import Path
+import subprocess
+
+# Add project root to path if needed
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(script_dir, ".."))
+sys.path.insert(0, project_root)
+
+# Define paths
+RESULTS_DIR = os.path.join(project_root, "results")
 
 def parse_args():
     """Parse command line arguments."""
@@ -50,6 +59,14 @@ def parse_args():
         "--name", type=str, default=None,
         help="Custom name for this simulation run (default: auto-generated)"
     )
+    parser.add_argument(
+        "--demo-path", type=str, default=None,
+        help="Full path to the demo.py script (default: None)"
+    )
+    parser.add_argument(
+        "--save-dir", type=str, default="demo_results",
+        help="Directory to save temporary results (default: 'demo_results')"
+    )
     return parser.parse_args()
 
 def run_simulation(args):
@@ -62,50 +79,64 @@ def run_simulation(args):
         run_name = f"{timestamp}_n{args.neurons}_s{args.steps}"
     
     # Set up temp directory for the demo.py script
-    temp_dir = f"temp_results_{timestamp}"
+    temp_dir = args.save_dir
+    os.makedirs(temp_dir, exist_ok=True)
     
-    # Create the command
-    cmd_parts = [
-        "python demo.py",
-        f"--neurons {args.neurons}",
-        f"--steps {args.steps}",
-        f"--save-dir {temp_dir}"
+    # Set default demo path if not provided
+    demo_path = args.demo_path if args.demo_path else os.path.join(script_dir, "demo.py")
+    
+    # Build the command with proper argument format
+    cmd = [
+        sys.executable,
+        demo_path,
+        "--neurons", str(args.neurons),
+        "--steps", str(args.steps),
+        "--save-dir", temp_dir
     ]
     
     if args.seed is not None:
-        cmd_parts.append(f"--seed {args.seed}")
+        cmd.extend(["--seed", str(args.seed)])
     
     if args.connection_density != 0.1:
-        cmd_parts.append(f"--connection-density {args.connection_density}")
+        cmd.extend(["--connection-density", str(args.connection_density)])
     
     if args.spontaneous_activity != 0.02:
-        cmd_parts.append(f"--spontaneous-activity {args.spontaneous_activity}")
+        cmd.extend(["--spontaneous-activity", str(args.spontaneous_activity)])
     
     if args.interactive:
-        cmd_parts.append("--interactive")
+        cmd.append("--interactive")
     
-    cmd = " ".join(cmd_parts)
+    print_cmd = " ".join(str(x) for x in cmd)
     
     # Run the simulation
     print(f"Running simulation: {run_name}")
-    print(f"Command: {cmd}")
+    print(f"Command: {print_cmd}")
     start_time = time.time()
-    exit_code = os.system(cmd)
-    end_time = time.time()
     
-    if exit_code != 0:
-        print(f"Error: Simulation failed with exit code {exit_code}")
+    # Use subprocess.run instead of os.system for better error handling
+    try:
+        result = subprocess.run(cmd, check=True)
+        exit_code = result.returncode
+    except subprocess.CalledProcessError as e:
+        print(f"Error: Simulation failed with exit code {e.returncode}")
         return
+    except FileNotFoundError:
+        print(f"Error: Could not find the demo script at: {demo_path}")
+        return
+    
+    end_time = time.time()
     
     print(f"Simulation completed in {end_time - start_time:.2f} seconds")
     
     # Create folders for this run
-    vis_dir = os.path.join("results", "visualizations", run_name)
-    state_dir = os.path.join("results", "states", run_name)
-    config_file = os.path.join("results", "configurations", f"{run_name}.json")
+    vis_dir = os.path.join(RESULTS_DIR, "visualizations", run_name)
+    state_dir = os.path.join(RESULTS_DIR, "states", run_name)
+    config_dir = os.path.join(RESULTS_DIR, "configurations")
+    config_file = os.path.join(config_dir, f"{run_name}.json")
     
     os.makedirs(vis_dir, exist_ok=True)
     os.makedirs(state_dir, exist_ok=True)
+    os.makedirs(config_dir, exist_ok=True)
     
     # Organize results
     print("Organizing results...")
@@ -182,7 +213,7 @@ def run_simulation(args):
 
 def list_simulations():
     """List all completed simulations with basic info."""
-    config_dir = os.path.join("results", "configurations")
+    config_dir = os.path.join(RESULTS_DIR, "configurations")
     if not os.path.exists(config_dir):
         print("No simulations found.")
         return
@@ -229,9 +260,9 @@ if __name__ == "__main__":
     args = parse_args()
     
     # Create the results directory structure if it doesn't exist
-    os.makedirs("results/configurations", exist_ok=True)
-    os.makedirs("results/visualizations", exist_ok=True)
-    os.makedirs("results/states", exist_ok=True)
+    os.makedirs(os.path.join(RESULTS_DIR, "configurations"), exist_ok=True)
+    os.makedirs(os.path.join(RESULTS_DIR, "visualizations"), exist_ok=True)
+    os.makedirs(os.path.join(RESULTS_DIR, "states"), exist_ok=True)
     
     # Run the simulation
     run_simulation(args) 

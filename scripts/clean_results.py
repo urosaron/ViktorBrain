@@ -9,8 +9,15 @@ import os
 import shutil
 import argparse
 import json
+import sys
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
+
+# Add project root to path to ensure imports work from scripts directory
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Adjust paths for results relative to project root
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), '..', 'results')
 
 def parse_args():
     """Parse command line arguments."""
@@ -43,7 +50,7 @@ def parse_args():
 
 def list_simulations():
     """List all completed simulations and return information about them."""
-    config_dir = os.path.join("results", "configurations")
+    config_dir = os.path.join(RESULTS_DIR, "configurations")
     if not os.path.exists(config_dir):
         return []
     
@@ -99,8 +106,8 @@ def remove_simulation(sim_info, dry_run=False):
     
     # Paths to remove
     config_path = sim_info["path"]
-    vis_dir = os.path.join("results", "visualizations", name)
-    state_dir = os.path.join("results", "states", name)
+    vis_dir = os.path.join(RESULTS_DIR, "visualizations", name)
+    state_dir = os.path.join(RESULTS_DIR, "states", name)
     
     # Report what we're removing
     print(f"Removing simulation: {name}")
@@ -124,7 +131,7 @@ def remove_simulation(sim_info, dry_run=False):
 
 def remove_state_files(dry_run=False):
     """Remove all state files but keep configurations and visualizations."""
-    states_dir = os.path.join("results", "states")
+    states_dir = os.path.join(RESULTS_DIR, "states")
     if not os.path.exists(states_dir):
         print("No state files found.")
         return
@@ -180,8 +187,7 @@ def remove_older_than(days, dry_run=False):
         print("No simulations found.")
         return
     
-    cutoff_date = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-    cutoff_date = cutoff_date.replace(day=cutoff_date.day - days)
+    cutoff_date = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(days=days)
     
     removed_count = 0
     for sim in sims:
@@ -197,7 +203,7 @@ def compress_state_files(dry_run=False):
     import gzip
     import glob
     
-    states_dir = os.path.join("results", "states")
+    states_dir = os.path.join(RESULTS_DIR, "states")
     if not os.path.exists(states_dir):
         print("No state files found.")
         return

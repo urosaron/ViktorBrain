@@ -15,6 +15,12 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Add project root to path to ensure imports work from scripts directory
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Adjust paths for results relative to project root
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), '..', 'results')
+
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(description="ViktorBrain Results Viewer")
@@ -54,7 +60,7 @@ def get_cluster_count(metrics):
 
 def list_simulations():
     """List all completed simulations with basic info."""
-    config_dir = os.path.join("results", "configurations")
+    config_dir = os.path.join(RESULTS_DIR, "configurations")
     if not os.path.exists(config_dir):
         print("No simulations found.")
         return []
@@ -114,7 +120,7 @@ def get_simulation_by_id(sim_id):
 
 def get_simulation_by_name(name):
     """Get a simulation by name."""
-    config_dir = os.path.join("results", "configurations")
+    config_dir = os.path.join(RESULTS_DIR, "configurations")
     if not os.path.exists(config_dir):
         print("No simulations found.")
         return None
@@ -174,7 +180,7 @@ def view_simulation(simulation):
                 print(f"    - {ctype}: {count}")
     
     # Check for visualization files
-    vis_dir = os.path.join("results", "visualizations", name)
+    vis_dir = os.path.join(RESULTS_DIR, "visualizations", name)
     if os.path.exists(vis_dir):
         images = list(Path(vis_dir).glob("*.png"))
         print(f"\nVisualizations ({len(images)} files):")
@@ -204,7 +210,7 @@ def view_simulation(simulation):
                 webbrowser.open(f"file://{os.path.abspath(html_file)}")
     
     # Check for state data
-    state_dir = os.path.join("results", "states", name)
+    state_dir = os.path.join(RESULTS_DIR, "states", name)
     if os.path.exists(state_dir):
         state_files = list(Path(state_dir).glob("*.json"))
         if state_files:
@@ -277,11 +283,11 @@ def generate_summary():
     plt.tight_layout()
     
     # Save summary
-    os.makedirs("results/summary", exist_ok=True)
-    plt.savefig("results/summary/performance_summary.png")
+    os.makedirs(os.path.join(RESULTS_DIR, "summary"), exist_ok=True)
+    plt.savefig(os.path.join(RESULTS_DIR, "summary", "performance_summary.png"))
     
     # Create an HTML report
-    html_file = "results/summary/summary_report.html"
+    html_file = os.path.join(RESULTS_DIR, "summary", "summary_report.html")
     with open(html_file, 'w') as f:
         f.write("<html><head><title>Simulation Summary Report</title>")
         f.write("<style>body{font-family:Arial;margin:20px}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:8px;border:1px solid #ddd}tr:nth-child(even){background-color:#f2f2f2}th{background-color:#4CAF50;color:white}</style>")
