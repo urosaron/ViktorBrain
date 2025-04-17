@@ -22,6 +22,17 @@ ViktorBrain/
 └── requirements.txt     # Python dependencies
 ```
 
+## Integration with ViktorAI
+
+ViktorBrain works in conjunction with ViktorAI to provide a more dynamic and organic response generation system. The brain simulation influences the AI's responses through:
+
+1. Processing user input to stimulate relevant brain regions
+2. Extracting neural state parameters (emotional valence, attention focus, etc.)
+3. Using these parameters to adjust AI response characteristics
+4. Providing feedback to the brain based on the AI's response
+
+The complete system creates a feedback loop where the simulated brain and AI influence each other, resulting in more nuanced and context-aware interactions.
+
 ## Usage
 
 The system can be run using the simple launcher in the root directory:
@@ -127,6 +138,38 @@ python scripts/view_results.py --list
 python scripts/view_results.py --id 1
 ```
 
+## API Endpoints
+
+ViktorBrain provides a REST API for integration with other systems:
+
+### Main Endpoints
+
+- `GET /` - Check API status
+- `POST /initialize` - Initialize a new brain session
+- `GET /status/{session_id}` - Get brain session status
+- `POST /process/{session_id}` - Process user input
+- `POST /feedback/{session_id}` - Process AI response feedback
+- `POST /stimulate/{session_id}` - Directly stimulate brain regions
+- `GET /metrics/{session_id}` - Get detailed brain metrics
+- `GET /visualize/{session_id}` - Get visualization data
+- `DELETE /session/{session_id}` - Close a brain session
+
+### Example API Usage
+
+```python
+import requests
+
+# Initialize brain
+response = requests.post("http://localhost:8000/initialize", 
+                         json={"neurons": 5000, "connection_density": 0.1})
+session_id = response.json()["session_id"]
+
+# Process input
+response = requests.post(f"http://localhost:8000/process/{session_id}",
+                         json={"prompt": "Hello Viktor!"})
+brain_analysis = response.json()["brain_analysis"]
+```
+
 ## Local vs Docker Deployment
 
 The system supports both local deployment for development and Docker deployment for production:
@@ -144,3 +187,18 @@ The system supports both local deployment for development and Docker deployment 
 - Easier deployment across different systems
 - More consistent environment
 - Docker files in the `config/` directory 
+
+## Requirements
+
+The primary dependencies are:
+- Python 3.9+
+- NumPy
+- Matplotlib
+- NetworkX
+- FastAPI/Uvicorn
+- psutil (for system management)
+
+Install dependencies with:
+```bash
+pip install -r requirements.txt
+``` 

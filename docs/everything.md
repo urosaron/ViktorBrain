@@ -11,6 +11,7 @@
    - [Visualization](#visualization)
    - [Results Management](#results-management)
    - [AI Integration](#ai-integration)
+   - [API and System Management](#api-and-system-management)
 5. [Neural Dynamics](#neural-dynamics)
 6. [How to Use](#how-to-use)
 7. [Technical Implementation Details](#technical-implementation-details)
@@ -280,6 +281,122 @@ def generate_llm_parameters(self, neural_state: Dict[str, float]) -> Dict[str, A
     }
 ```
 
+### API and System Management
+
+The ViktorBrain system now includes a comprehensive API and management layer that enables seamless integration with ViktorAI and other systems.
+
+#### REST API
+
+The API is built using FastAPI and provides these core functionalities:
+
+1. **Session Management**:
+   - Create new brain instances with configurable parameters
+   - Maintain multiple concurrent brain sessions
+   - Close sessions gracefully when no longer needed
+
+2. **Input Processing**:
+   - Accept and process text inputs
+   - Map inputs to brain stimulation patterns
+   - Return brain state analysis
+
+3. **Feedback Processing**:
+   - Process AI response as feedback to the brain
+   - Allow the brain to learn from interaction patterns
+   - Update neural connections based on conversation flow
+
+4. **Direct Brain Control**:
+   - Stimulate specific brain regions or clusters
+   - Adjust global parameters like spontaneous activity
+   - Reset or modify neural state
+
+5. **Metrics and Monitoring**:
+   - Retrieve detailed brain activity metrics
+   - Access visualization data for monitoring
+   - Track brain evolution over time
+
+The API's RESTful structure uses session-based interactions, for example:
+
+```python
+# API route for processing input
+@app.post("/process/{session_id}")
+async def process_input(
+    session_id: str,
+    request: ProcessRequest,
+    background_tasks: BackgroundTasks
+):
+    # Retrieve the session
+    if session_id not in active_brains:
+        raise HTTPException(status_code=404, detail="Brain session not found")
+    
+    brain = active_brains[session_id]
+    
+    # Process the input through the brain
+    brain_analysis = brain.process_input(
+        request.prompt,
+        temperature=request.temperature,
+        max_tokens=request.max_tokens
+    )
+    
+    # Schedule background task to continue neural activity
+    background_tasks.add_task(
+        continue_simulation, 
+        brain=brain, 
+        steps=20
+    )
+    
+    return {
+        "brain_analysis": brain_analysis,
+        "simulation_time": brain.time_step
+    }
+```
+
+#### System Management
+
+The system management layer provides tools for:
+
+1. **Orchestration**:
+   - Start/stop both ViktorBrain and ViktorAI services
+   - Monitor running processes
+   - Maintain process information for recovery
+
+2. **Configuration**:
+   - Set global simulation parameters
+   - Configure API settings
+   - Manage deployment options
+
+3. **Testing and Validation**:
+   - Run validation tests on the system
+   - Verify API endpoints
+   - Test integration with ViktorAI
+
+4. **Resource Management**:
+   - Track memory and CPU usage
+   - Adjust neuron count based on available resources
+   - Manage simulation results and storage
+
+The management layer is implemented through the `start_system.py` script, which provides a unified interface for controlling the entire ecosystem:
+
+```python
+def save_pid_info(component, pid):
+    """Save process information to the PID file."""
+    pid_data = {}
+    
+    # Read existing data if it exists
+    if os.path.exists(PID_FILE):
+        try:
+            with open(PID_FILE, 'r') as f:
+                pid_data = json.load(f)
+        except:
+            pid_data = {}
+    
+    # Update with new process
+    pid_data[component] = pid
+    
+    # Write back to file
+    with open(PID_FILE, 'w') as f:
+        json.dump(pid_data, f)
+```
+
 ## Neural Dynamics
 
 The simulation produces several interesting dynamics that mirror biological neural networks:
@@ -331,6 +448,23 @@ Manage disk space and optimize storage:
 
 ```bash
 python clean_results.py --older-than 7 --keep-json
+```
+
+### 5. Complete System Mode
+Run the full ViktorBrain and ViktorAI ecosystem:
+
+```bash
+# Start both components
+python scripts/start_system.py start
+
+# Check status
+python scripts/start_system.py status
+
+# Open chat interface
+python scripts/start_system.py chat
+
+# Stop everything
+python scripts/start_system.py stop
 ```
 
 ## Technical Implementation Details
